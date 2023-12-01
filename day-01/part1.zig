@@ -2,7 +2,7 @@
 const std = @import("std");
 
 test "combine first and last digit per line and then add all together" {
-    try std.testing.expectEqual(calculate_calibration_value("./test_input1.txt"), 142);
+    try std.testing.expectEqual(142, calculate_calibration_value("./test_input1.txt"));
 }
 
 fn calculate_calibration_value(file_name: []const u8) !u32 {
@@ -47,7 +47,7 @@ fn unamend_line(line: []u8) u8 {
 }
 
 pub fn main() !void {
-    const calibration_value = try calculate_calibration_value("./input1.txt");
+    const calibration_value = try calculate_calibration_value("./input.txt");
 
     try std.io.getStdOut().writer().print("Calibration Value: {d}\n", .{calibration_value});
 }
