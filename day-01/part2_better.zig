@@ -78,7 +78,5 @@ fn calculate_calibration_value(file_name: []const u8) !u32 {
 }
 
 pub fn main() !void {
-    const calibration_value = try calculate_calibration_value("./input.txt");
-
-    try std.io.getStdOut().writer().print("Calibration Value: {d}\n", .{calibration_value});
+    try std.io.getStdOut().writer().print("Calibration Value: {d}\n", .{try calculate_calibration_value("./input.txt")});
 }
